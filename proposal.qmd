@@ -1,0 +1,43 @@
+---
+title: "proposal"
+format: html
+editor: visual
+---
+
+# Project Proposal
+
+## 1. Dataset
+
+website offered on StatProg2-2026-SoSe Soda :
+
+<https://opendata.muenchen.de/>
+
+<https://mstatistik.muenchen.de/indikatorenatlas/atlas.html?indicator=i51>
+
+<https://datasetsearch.research.google.com/>
+
+###URL :
+
+## 2. Research Question
+
+## 3. IDA
+
+```         
+### dplyr::glimpse(data)
+```
+
+## 4. EDA
+
+###ggplot2 : : ggplot()
+
+## 5. Analysis plan
+
+## 6. Workflow organisation
+
+- **Code style:** Which style guide will you follow (e.g. tidyverse style)? How will you enforce it — linting with `styler`, a shared AI system prompt, or a documented convention?
+
+- **Packages:** Which packages will you rely on? Will you use `renv` to lock package versions so the project is reproducible across machines?
+
+- **Git workflow:** How will you divide work? Describe your branching strategy — will each person work on their own branch, or will you split by task?
+
+- **`.gitignore`:** What will you exclude from version control (e.g. raw data files, rendered outputs, `.env` secrets)?
