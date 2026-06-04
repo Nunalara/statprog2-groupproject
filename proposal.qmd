@@ -8,33 +8,47 @@ editor: visual
 
 ## 1. Dataset
 
-website offered on StatProg2-2026-SoSe Soda :
+\### source : The European Parenting Leave Policies (EPLP) Dataset
 
-<https://opendata.muenchen.de/>
-
-<https://mstatistik.muenchen.de/indikatorenatlas/atlas.html?indicator=i51>
-
-<https://datasetsearch.research.google.com/>
-
-###URL :
+\### URL : <https://zenodo.org/records/17648712>
 
 ## 2. Research Question
+
+- **Descriptive** : How has maternity leave has changed over the years (depending on the country?)
+
+- **Exploratory** : How does maternal leave change depending on the country, comparing types of maternity leave and aid ?
+
+- **Explanatory** : How do duration of maternal leave and amount of financial support correlate?
 
 ## 3. IDA
 
 ```         
-### dplyr::glimpse(data)
+### 
+Rows: 1,156
+Columns: 35
 ```
 
-## 4. EDA
+```{r}
+library(readxl)
+library(dplyr)
 
-###ggplot2 : : ggplot()
+data <- readxl::read_excel(
+  "data-raw/EPLP_Dataset_Workbook_v2.xlsx",
+  sheet = "Dataset",
+  skip = 1
+)
 
-## 5. Analysis plan
 
-## 6. Workflow organisation
 
-- **Code style:** Which style guide will you follow (e.g. tidyverse style)? How will you enforce it — linting with `styler`, a shared AI system prompt, or a documented convention?
+glimpse(data)
+summary(data)
+```
+
+## 4. Analysis plan
+
+## 5. Workflow organisation
+
+- **Code style:** Tidyverse
 
 - **Packages:** Which packages will you rely on? Will you use `renv` to lock package versions so the project is reproducible across machines?
 
