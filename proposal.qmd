@@ -8,9 +8,13 @@ editor: visual
 
 ## 1. Dataset
 
-\### source : The European Parenting Leave Policies (EPLP) Dataset
+**source** : The European Parenting Leave Policies (EPLP) Dataset
 
-\### URL : <https://zenodo.org/records/17648712>
+**URL** : <https://zenodo.org/records/17648712>
+
+**Context and target audience** : ??
+
+**key variables :** ??
 
 ## 2. Research Question
 
@@ -31,6 +35,9 @@ Columns: 35
 ```{r}
 library(readxl)
 library(dplyr)
+library(visdat)
+library(skimr)
+
 
 data <- readxl::read_excel(
   "data-raw/EPLP_Dataset_Workbook_v2.xlsx",
@@ -42,9 +49,21 @@ data <- readxl::read_excel(
 
 glimpse(data)
 summary(data)
+vis_dat(dat)
+skim(data)
 ```
 
+- Summary statistics for key variables
+- Your two plots with captions
+- A bullet list of data quality issues and how you plan to address them ： the dataset contains special missing value codes such as -98 and -99, which should be treated carefully during data cleaning.
+
 ## 4. Analysis plan
+
+Which variables will you use?
+
+What analytical approach or method seems appropriate, and why?
+
+What cleaning or transformation steps do you anticipate needing? What are the main uncertainties or risks (e.g. not enough data, confounding variables, missing values)?
 
 ## 5. Workflow organisation
 
