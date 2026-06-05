@@ -8,21 +8,23 @@ editor: visual
 
 ## 1. Dataset
 
-**source** : The European Parenting Leave Policies (EPLP) Dataset
+**source** : Dataset Spitzer, S., Lemoine, A., Song, Z., Reiter, C., Greulich, A., Herlitz, A., Bártová, A., Brini, E., Dančíková, Z., Galdauskaitė, D., González, L., Hatzivarnava‑Kazassi, E., Honkaniemi, H., Juárez, S. P., Kaldager Hart, R., Kristiansen, I. L., Kurowska, A., Pall, K., Pertold-Gebicka, B., … Wrohlich, K. (2025). The European Parenting Leave Policies (EPLP) Dataset \[Data set\]. Zenodo. https://doi.org/10.5281/zenodo.17648712
 
 **URL** : <https://zenodo.org/records/17648712>
 
-**Context and target audience** : ??
+**Context and target audience** : academic and potentially journalistic
 
-**key variables :** ??
+**key variables :** country, year, maternity leave (mat_m_ld_bb, mat_m_ld_ab,
+
+mat_v_ld_bb, mat_v_ld_ab), par1_ld, par1_fr,par1_for_whom, par2_ld,par2_fr, par2_for_whom, currency
 
 ## 2. Research Question
 
-- **Descriptive** : How has maternity leave has changed over the years (depending on the country?)
+- **Descriptive/Exploratory** : How has maternity leave changed over the years depending on countries? How does maternity leave change depending on the country, comparing types of maternity leave and aid ?
 
-- **Exploratory** : How does maternal leave change depending on the country, comparing types of maternity leave and aid ?
+- **Predictive** : How is maternity leave going to change in future per country?
 
-- **Explanatory** : How do duration of maternal leave and amount of financial support correlate?
+- **Explanatory** : How do duration of maternity leave and amount of financial support correlate?
 
 ## 3. IDA
 
@@ -53,24 +55,23 @@ vis_dat(dat)
 skim(data)
 ```
 
-- Summary statistics for key variables
-- Your two plots with captions
-- A bullet list of data quality issues and how you plan to address them ： the dataset contains special missing value codes such as -98 and -99, which should be treated carefully during data cleaning.
-
 ## 4. Analysis plan
 
-Which variables will you use?
+**Which variables will you use?:** country, year, mat_m_ld_bb, mat_m_ld_ab,
 
-What analytical approach or method seems appropriate, and why?
+mat_v_ld_bb, mat_v_ld_ab, par1_ld, par1_fr,par1_for_whom, par2_ld,par2_fr, par2_for_whom
 
-What cleaning or transformation steps do you anticipate needing? What are the main uncertainties or risks (e.g. not enough data, confounding variables, missing values)?
+**What analytical approach or method seems appropriate, and why?:** regression, correlation, creating and analyzing the plots (timeline plot,scatter plot with regression line, heat map) to describe the data.
+
+**What cleaning or transformation steps do you anticipate needing? What are the main uncertainties or risks (e.g. not enough data, confounding variables, missing values)?:** Cleaning up missing values, deciding what to do with countries not having enough data, summarizing/merging variables, encoding the character factors, and eventually creating a new data table.
 
 ## 5. Workflow organisation
 
 - **Code style:** Tidyverse
 
-- **Packages:** Which packages will you rely on? Will you use `renv` to lock package versions so the project is reproducible across machines?
+- **Packages:** Which packages will you rely on? Will you use `renv` to lock package versions so the project is reproducible across machines?: Tidyverse, ggplot, rnaturalearth, renv, sf, janitor, readxl
 
-- **Git workflow:** How will you divide work? Describe your branching strategy — will each person work on their own branch, or will you split by task?
+- **Git workflow:** How will you divide work? Describe your branching strategy — will each person work on their own branch, or will you split by task?: Split it by task: first splitting it by question and then overlook and correct it together as a team.
 
-- **`.gitignore`:** What will you exclude from version control (e.g. raw data files, rendered outputs, `.env` secrets)?
+- **`.gitignore`:** What will you exclude from version control (e.g. raw data files, rendered outputs, `.env` secrets)?: .Rproj.user/ .Rhistory .RData .Ruserdata .Rhistory .RData .Ruserdata
+
