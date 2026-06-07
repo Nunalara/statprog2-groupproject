@@ -16,7 +16,9 @@ editor: visual
 
 **key variables :** country, year, maternity leave (mat_m_ld_bb, mat_m_ld_ab,
 
-mat_v_ld_bb, mat_v_ld_ab), par1_ld, par1_fr,par1_for_whom, par2_ld,par2_fr, par2_for_whom, currency
+mat_v_ld_bb, mat_v_ld_ab), par1_ld, par1_fr,par1_for_whom, par2_ld,par2_fr, par2_for_whom,
+
+currency
 
 ## 2. Research Question
 
@@ -26,18 +28,11 @@ mat_v_ld_bb, mat_v_ld_ab), par1_ld, par1_fr,par1_for_whom, par2_ld,par2_fr, par2
 
 - **Explanatory** : How do duration of maternity leave and amount of financial support correlate?
 
-## 3. IDA
-
-```         
-### 
-Rows: 1,156
-Columns: 35
-```
+## 3. IDA & EDA
 
 ```{r}
 library(readxl)
 library(dplyr)
-library(visdat)
 library(skimr)
 
 
@@ -50,16 +45,68 @@ data <- readxl::read_excel(
 
 
 glimpse(data)
-summary(data)
-vis_dat(dat)
-skim(data)
 ```
+
+The dataset contains 1155 observations and 35 variables.
+
+```{r}
+key_vars <- data |>
+  select(country, year,
+         mat_m_ld_bb, mat_m_ld_ab,
+         mat_v_ld_bb, mat_v_ld_ab,
+         par1_ld, par1_fr, par1_for_whom,
+         par2_ld, par2_fr, par2_for_whom, currency)
+
+summary(key_vars)
+skim(key_vars)
+```
+
+```{r}
+library(ggplot2)
+data_withna <- data |>
+  mutate(across(where(is.numeric), ~ na_if(.x, -98))) |>
+  mutate(across(where(is.numeric), ~ na_if(.x, -99)))
+
+data_withna <- data_withna |>
+  mutate(
+    mat_ld_total = mat_m_ld_bb + mat_m_ld_ab + mat_v_ld_bb + mat_v_ld_ab
+  )
+
+data_withna |>
+  group_by(year) |>
+  summarise(mean_mat_ld_total = mean(mat_ld_total, na.rm = TRUE)) |>
+  ggplot(aes(x = year, y = mean_mat_ld_total)) +
+  geom_line() +
+  labs(
+    title = "Average maternity leave duration over time",
+    x = "Year",
+    y = "Average total maternity leave duration"
+  )
+
+ggplot(data_withna, aes(x = mat_ld_total)) +
+  geom_histogram() +
+  labs(
+    title = "Distribution of total maternity leave duration",
+    x = "Total maternity leave duration in weeks",
+    y = "Count"
+  )
+
+
+```
+
+### Data quality issues
+
+- No `NA` values were detected.
+- However, the dataset contains special missing value codes such as `-98` and `-99`.
+- During data cleaning, `-98` and `-99` will be treated as missing values.
 
 ## 4. Analysis plan
 
 **Which variables will you use?:** country, year, mat_m_ld_bb, mat_m_ld_ab,
 
-mat_v_ld_bb, mat_v_ld_ab, par1_ld, par1_fr,par1_for_whom, par2_ld,par2_fr, par2_for_whom
+mat_v_ld_bb, mat_v_ld_ab, par1_ld, par1_fr,par1_for_whom, par2_ld,par2_fr, par2_for_whom,
+
+currency
 
 **What analytical approach or method seems appropriate, and why?:** regression, correlation, creating and analyzing the plots (timeline plot,scatter plot with regression line, heat map) to describe the data.
 
@@ -74,4 +121,3 @@ mat_v_ld_bb, mat_v_ld_ab, par1_ld, par1_fr,par1_for_whom, par2_ld,par2_fr, par2_
 - **Git workflow:** How will you divide work? Describe your branching strategy — will each person work on their own branch, or will you split by task?: Split it by task: first splitting it by question and then overlook and correct it together as a team.
 
 - **`.gitignore`:** What will you exclude from version control (e.g. raw data files, rendered outputs, `.env` secrets)?: .Rproj.user/ .Rhistory .RData .Ruserdata .Rhistory .RData .Ruserdata
-
