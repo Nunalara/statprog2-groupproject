@@ -11,7 +11,9 @@ format: html
 
 2.  **Predictive** : How is maternity leave going to change in future per country?
 
-3.  **Explanatory** : How do duration of maternity leave and amount of financial support correlate? \## Dataset
+3.  **Explanatory** : How do duration of maternity leave and amount of financial support correlate?
+
+## Dataset
 
 - **Source:** Dataset Spitzer, S., Lemoine, A., Song, Z., Reiter, C., Greulich, A., Herlitz, A., Bártová, A., Brini, E., Dančíková, Z., Galdauskaitė, D., González, L., Hatzivarnava‑Kazassi, E., Honkaniemi, H., Juárez, S. P., Kaldager Hart, R., Kristiansen, I. L., Kurowska, A., Pall, K., Pertold-Gebicka, B., … Wrohlich, K. (2025). The European Parenting Leave Policies (EPLP) Dataset \[Data set\]. Zenodo. https://doi.org/10.5281/zenodo.17648712
 
@@ -21,11 +23,11 @@ format: html
 
 ## Group Members
 
-| Name  | GitHub username  |
-|-------|------------------|
-| Sarah | saPuthiaparampil |
-|       |                  |
-|       |                  |
+| Name   | GitHub username  |
+|--------|------------------|
+| Sarah  | saPuthiaparampil |
+| Lara   | Nunalara         |
+| Yankui | Jankui           |
 
 ## Repository Structure
 
