@@ -51,11 +51,11 @@ If you did not use a skill, say so and note why.
 
 ### Initial data analysis & data cleaning (W7)
 
-*What we did:*
+*What we did:* We first all took a look at the raw data, and tried to understand what the variables represent. The first thing we notices, what that for some variables (e.g. par_1_rr for CZ) we had a lot of missing values, which were not coded as such. We also relazied that we were eokring with categorized variables, and discussed how to handle this best.
 
-*What worked well:*
+*What worked well:* clearing out the NAs?
 
-*What was hard:*
+*What was hard:* Deciding which variables were relevant for our analysis, it was difficult to limit the scope of the analysis. It didn't make sense to check out all countries, because some had a lot of NAs, but it would also be statistically incorrect to completly ignore them. We also had to discuss how deal with the NAs, and what types of parental leave we wanted to focus on because we were looking at multiple categories for different types of parental leave.
 
 ### Reproducibility, open data & renv (W9)
 
@@ -69,7 +69,7 @@ If you did not use a skill, say so and note why.
 
 *What we did:*
 
-*What worked well:*
+*What worked well:* The EDA was quite interesting and an important step beofre getting to fit the models, it helped understand the data better and what is trying to tell. 
 
 *What was hard:*
 
@@ -103,7 +103,7 @@ Describe 2–3 decisions that had a meaningful effect on your results or workflo
 
 ## Workflow & collaboration
 
-*How did we divide work across group members?*
+*How did we divide work across group members?* Each member focused on one question. Everybody worked from the main branch, but had an indivudal r script regarding the question they focused on. We tought this would be the easiest way to later gather all the information.
 
 *What branching or Git workflow did we actually use — and did it match the proposal?*
 
@@ -112,6 +112,10 @@ Describe 2–3 decisions that had a meaningful effect on your results or workflo
 ## LLM usage
 
 Describe up to 5 significant uses of an LLM tool during the project.
+
+Sarah:
+- help with detecting mistakes in my code, or when i didn't get the results i wanted
+- help clean up code
 
 ### Usage 1: [task]
 
