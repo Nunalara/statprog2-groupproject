@@ -3,10 +3,6 @@
 ##  How does maternity leave change depending on the country,
 ##  comparing types of maternity leave and aid ?
 ################################################################################
-# 3)  How do duration of maternity leave and amount of financial support correlate?
-################################################################################
-
-
 
 # Set up
 library(ggplot2)
@@ -172,30 +168,8 @@ ggplot(data_mat_long, aes(x = country, y = weeks, fill = leave_type)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
  
 
+################################################################################
+# 3)  How do duration of maternity leave and amount of financial support correlate?
+################################################################################
 
-## comparing maternity leave over the years (for specific countries)
-# Germany
 
-mat_ger <- data_expl |> 
-  filter(country == "DE")
-
-ggplot (mat_ger, aes(x = year, y = mat_ld_total))+
-  geom_line()+
-  labs(
-    x = "Year",
-    y = " Total maternity leave in weeks",
-    title = "Maternity leave over the Years"
-  )+
-  theme_light()
-
-## Ireland
-mat_ir <- data_expl |> 
-  filter (country == "IE")
-ggplot(mat_ir, aes(x = year, y = mat_ld_total))+
-  geom_line()+
-  labs(
-    x = "Year",
-    y = " Total maternity leave in weeks",
-    title = "Maternity leave over the Years"
-  )+
-  theme_light()
