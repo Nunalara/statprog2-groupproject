@@ -17,7 +17,7 @@ format: html
 
 - **Source:** Dataset Spitzer, S., Lemoine, A., Song, Z., Reiter, C., Greulich, A., Herlitz, A., Bártová, A., Brini, E., Dančíková, Z., Galdauskaitė, D., González, L., Hatzivarnava‑Kazassi, E., Honkaniemi, H., Juárez, S. P., Kaldager Hart, R., Kristiansen, I. L., Kurowska, A., Pall, K., Pertold-Gebicka, B., … Wrohlich, K. (2025). The European Parenting Leave Policies (EPLP) Dataset \[Data set\]. Zenodo. https://doi.org/10.5281/zenodo.17648712
 
-- **Licence:** <!-- e.g. CC BY 4.0 -->
+- **Licence:** CC BY
 
 - **Description:** The dataset focuses on the different types of parental leaves policies. It covers maternity, co-parent, paid parental, and job-protected leave regulations across 21 European countries for 55 years, spanning the period from 1970 to 2024. The dataset primarily focuses on policies that shape the length of leave for mothers and their co-parents, and how leave can be shared between them. It provides harmonised data that enables comparisons of policies both across countries and over time, including 33 variables and country-specific reform timelines.
 
