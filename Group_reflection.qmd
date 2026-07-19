@@ -79,17 +79,20 @@ If you did not use a skill, say so and note why.
 
 *What worked well:*
 
-*What was hard:*
+*What was hard:* 
+choosing what facets to use, to try and avoid overplotting. Picking a good color sheme that would remain consistent throughout all projects.
 
 ## Key analytical decisions
 
 Describe 2–3 decisions that had a meaningful effect on your results or workflow.
 
-### Decision 1: [short title]
+### Decision 1: Flat rate vs. replacement rate
 
 *What were we deciding between?*
+There are three different ways the finacial aid for parental leave is decided on. Depending on what measure you use, the meaning changes significantly. 
 
 *How did we reason through it?*
+if we relied on replacement rate, the aid would depend on how much the parent earned before. we would also have to look up how big the replacement rate would be, which would drastically change 
 
 *In hindsight, would we decide differently?*
 
