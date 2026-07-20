@@ -3,3 +3,17 @@ title: "Home"
 format: html
 ---
 
+## Background Info
+
+The The European Parenting Leave Policies (EPLP) Dataset focuses on Regualtions regarding parental leave in 21 European countries, counting data from 1970 to 2024.
+
+
+## Research Questions
+
+1.  **Descriptive/Exploratory** : How has maternity leave changed over the years depending on countries? How does maternity leave change depending on the country, comparing types of maternity leave and aid ?
+
+2.  **Predictive** : How is maternity leave going to change in future per country?
+
+3.  **Explanatory** : How do duration of maternity leave and amount of financial support correlate?
+
+## EDA

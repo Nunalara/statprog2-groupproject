@@ -1,4 +1,5 @@
-project: Maternity Leave Rules in Europe
+project:
+  title: "Maternity Leave Rules in Europe"
   type: website
   output-dir: docs
 

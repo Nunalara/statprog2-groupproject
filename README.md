@@ -59,11 +59,7 @@ The "Set_up" contains the final data set we were working with troughout this pro
 
 This directory contains the plots of our analysis. They are all saved in png format.
 
-### Backup
 
-This directory contains two files:
-1. Backup_plots: the programs for all the plots which are in our backup files
-2. Backup_images: the backup plots saved in png format
 
 
 
