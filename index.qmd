@@ -3,10 +3,48 @@ title: "Home"
 format: html
 ---
 
-## Background Info
+## Introduction
 
-The The European Parenting Leave Policies (EPLP) Dataset focuses on Regualtions regarding parental leave in 21 European countries, counting data from 1970 to 2024.
+Maternity leave policies are a central component of modern welfare states, aiming to protect the health of mothers and children while supporting women's participation in the labor market. Across Europe, these policies vary substantially in terms of duration, compensation, and job protection. This variation provides a valuable context for analyzing how institutional frameworks shape social and economic outcomes.
 
+Understanding maternity leave is particularly important in light of ongoing discussions about gender equality, labor shortages, and demographic change. Differences in national policies allow for meaningful comparisons and offer insights into how policy design influences both individual behavior and broader labor market dynamics.
+
+
+## Institutional Background
+
+Maternity leave policies typically differ along three key dimensions:
+
+- **Duration**: The length of time mothers are entitled to take leave after childbirth\
+- **Compensation**: The proportion of wages replaced during leave\
+- **Job Protection**: The extent to which employment is guaranteed upon return
+
+At the European level, directives set minimum standards for maternity protection. However, individual countries retain significant autonomy in implementation, resulting in considerable cross-national variation. Some countries provide generous, well-paid leave, while others offer shorter or less compensated periods.
+
+This diversity makes Europe an ideal setting to study how policy differences impact labor market outcomes and gender equality.
+
+## Empirical Motivation
+
+The variation in maternity leave policies across European countries provides a unique opportunity for empirical analysis. Differences in duration, compensation, and institutional design allow researchers to examine how policy environments influence outcomes such as:
+
+- Female labor force participation\
+- Wage inequality\
+- Career interruptions and job mobility
+
+By comparing countries, it becomes possible to identify patterns and better understand the role of policy in shaping labor market behavior.
+
+## Link to This Project
+
+This project examines maternity leave policies across Europe using the EPLP dataset.
+
+The dataset focuses on maternity and parental leave policies for employed parents at the country level, covering only legislation that applies to the majority of families. It distinguishes between different types of leave, including maternity leave (before and after birth), co-parent or paternity leave, and paid parental leave available to both parents.
+
+Importantly, the data records only individual entitlements, meaning leave is measured separately for each parent without accounting for dependencies between them. All measures refer to policies relevant to first births and are reported in the original national currency at the time.
+
+Key dimensions of the dataset include the maximum duration of paid parental leave, the duration paid at the highest flat-rate benefit, and the duration paid at the highest earnings-related (replacement) rate. In addition, the dataset captures job-protected leave, defined as the period during which parents are guaranteed the right to return to their job.
+
+Overall, the dataset enables cross-country comparisons of maternity and parental leave policies by focusing on policy design, benefit structures (flat-rate vs. earnings-related), and the extent of job protection.
+
+By analyzing cross-country differences, we aim to explore how institutional variations relate to labor market outcomes and gender equality. The project contributes to a broader understanding of how policy design can support both economic participation and social equity. To limit the scope of the project, we focused on an explorative analysis, focusing on the length of a parental leave, especially the length of the motherhood leave, and how that might have changed over the years and might vary from country to country. We were also interested to check the financial aid each state offered, so we looked at the financial compensation parents get on top of or instead of leave time. We summarized these interest into the following hypotheses.
 
 ## Research Questions
 
@@ -16,4 +54,32 @@ The The European Parenting Leave Policies (EPLP) Dataset focuses on Regualtions 
 
 3.  **Explanatory** : How do duration of maternity leave and amount of financial support correlate?
 
-## EDA
+## Explorative Data Analysis
+
+### Duration of Motherhood leave
+
+We first looked at how the average maternity leave has changed over time. we calculated the average across all countries and checked the progression over the years from 1970 to 2024.
+
+ADD PICTURE.
+
+The plot shoes how there has been an overall upwards trend, especially following 1985. with a recent decrease starting about 2011. To better understand how this might come to be, we have to take a more detailed look at each country individually.
+When looking at the average length of maternity leave we focused on the total maternity rate, which is the sum of voluntary and mandatory maternity leave. But this is handeled very differntly depending on the country. So it was worth looking at this seperatly.
+
+ADD PLOTS (voluntary vs mandatory)
+
+we can now see that some country only offer one of these types (DE, EE), while some offer both. for some countries this also has changed over the years (e.g. NO,FR).
+To be better able to compare countries we calculated the absolute differences, and portrayed them using color to differentiate between the types of maternity leaves offered. 
+
+The reason for some countries maybe only offering one of the types might have to due with other systemic support given to parents, which brings us to our second point of analysis: Financial aid given by the country's government.
+
+### Financial aid during motherhood leave
+As mentioned in the Theory page, we need to compare between flat rate and replacement rate. especially northern countries prefer the second option???? (FACT CHECK).
+
+
+## Models
+finally, we fitted some model.
+So far, we tried to predict how maternity rates might change in the future.
+ADD PLOTS
+
+
+

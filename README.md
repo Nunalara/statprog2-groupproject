@@ -1,16 +1,6 @@
 # Maternity Leave Regulations in Europe
 
-
-
-**Group Members**
-
-| Name   | GitHub username  |
-|--------|------------------|
-| Sarah  | saPuthiaparampil |
-| Lara   | Nunalara         |
-| Yankui | Jankui           |
-
-
+**Authors**: Sarah Puthiaparampil, Lara , Yankui
 
 ## General Instructions 
 
