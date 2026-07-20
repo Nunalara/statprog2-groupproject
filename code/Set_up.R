@@ -1,7 +1,25 @@
-library(readxl)
-library(dplyr)
-library(skimr)
-library(tidyverse)
+# env_setup.R - Environment Setup Script
+# Dieses Skript richtet die Arbeitsumgebung für das Projekt ein.
+
+# Notwendige Pakete definieren (können wir ja einfach erweitern falls wir mehr brauchen)
+packages <- c( "readxl",
+              "tidyr",
+              "dplyr",
+              "ggplot2",
+              "skimr",
+              "maps",
+              "forcats",
+              "scales")
+
+# Pakete installieren und laden
+for (pkgs in packages) {
+  if (!require(pkgs, character.only = TRUE)) {
+    install.packages(pkgs)
+    library(pkgs, character.only = TRUE)
+  }
+}
+
+
 
 data <- readxl::read_excel(
   "data-raw/EPLP_Dataset_Workbook_v2.xlsx",
@@ -45,3 +63,6 @@ data_expl |>
   filter(is.na(mat_m_ld_bb) & is.na(mat_m_ld_ab) & is.na(mat_v_ld_bb) & is.na(mat_v_ld_ab)) |>
   select(country, year, mat_ld_total)
 ## No case of all NAs
+
+
+## fixed color scale

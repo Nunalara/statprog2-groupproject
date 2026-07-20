@@ -12,7 +12,7 @@
 
 
 
-## General Instuctions 
+## General Instructions 
 
 This is the repository for our "Maternity Leave Regulations" project.
 This is a file to ensure the performance of our programs. 
