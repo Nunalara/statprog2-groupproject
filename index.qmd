@@ -56,7 +56,7 @@ By analyzing cross-country differences, we aim to explore how institutional vari
 
 ## Explorative Data Analysis
 
-### Duration of Motherhood leave
+### Duration of Motherhood leave (frage 1)
 
 We first looked at how the average maternity leave has changed over time. we calculated the average across all countries and checked the progression over the years from 1970 to 2024.
 
@@ -72,14 +72,14 @@ To be better able to compare countries we calculated the absolute differences, a
 
 The reason for some countries maybe only offering one of the types might have to due with other systemic support given to parents, which brings us to our second point of analysis: Financial aid given by the country's government.
 
-### Financial aid during motherhood leave
+ADD MODEL
+
+### Financial aid during motherhood leave (Frage 3)
 As mentioned in the Theory page, we need to compare between flat rate and replacement rate. especially northern countries prefer the second option???? (FACT CHECK).
 
 
-## Models
-finally, we fitted some model.
-So far, we tried to predict how maternity rates might change in the future.
-ADD PLOTS
+## Prediction
+
 
 
 

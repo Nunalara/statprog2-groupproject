@@ -11,7 +11,8 @@ data_expl |>
     title = "Average maternity leave duration over time",
     x = "Year",
     y = "Average total maternity leave duration"
-  )
+  )+
+  theme_light()
 
 ## Plotting the overall changes in maternity leave
 ggplot(data_expl, aes(x = mat_ld_total)) +
@@ -20,7 +21,8 @@ ggplot(data_expl, aes(x = mat_ld_total)) +
     title = "Distribution of total maternity leave duration",
     x = "Total maternity leave duration in weeks",
     y = "Count"
-  )
+  )+
+  theme_light()
 
 ## Maternity leave for women 1970 vs 2024 --------------------------------------
 
@@ -104,7 +106,7 @@ ggplot(diff_data, aes(y = country, x = diff, fill = type)) +
     x = "Total difference in leave weeks (2024 − 1970)",
     fill = "Leave type"
   ) +
-  theme_bw()
+  theme_light()
 
 ## We decided to choose 3 countries for analysis, one where there has been no signficant change (Germany),
 ## A country where there has been a significant change, negative (France) and positive (Italy)
