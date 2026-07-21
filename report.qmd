@@ -21,9 +21,9 @@ If you did not use a skill, say so and note why.
 
 *What we did:* this depends on everyone's individual usage --> see individual  reflection.
 
-*What worked well:*
+*What worked well:* /
 
-*What was hard:*
+*What was hard:* /
 
 ### Version control & remotes (W4)
 
@@ -35,19 +35,21 @@ If you did not use a skill, say so and note why.
 
 ### Quarto websites & collaborative coding (W5)
 
-*What we did:* we didnt branch our repository, as we thought it was best to avoid any merging issues in the long game. It turned out to be a good decision, as we didn't have too many different documents to work on so it was fine in the end. For a bigger, more detailed analysis this would not have worked out.
+*What we did:* we didn't branch our repository, as we thought it was best to avoid any merging issues in the long game. It turned out to be a good decision, as we didn't have too many different documents to work on so it was fine in the end. For a bigger, more detailed analysis this would not have worked out.
+In terms of the website, only one person was responsible for the web layout. We relied on the sketch offered on the course git and followed that.
 
 *What worked well:*
 
-*What was hard:* since multiple people worrked on the same script, there was the fear of maybe deleting each others progress. we tried to avoid this by working in different sections, so everyone woudl focus on their individual question.
+*What was hard:* since multiple people worked on the same script, there was the fear of maybe deleting each others progress. we tried to avoid this by working in different sections, so everyone woudl focus on their individual question.
 
 ### R packages (W6)
 
-*What we did:* we relied on the basic r packages, like **tidyverse** and **ggplot** for visualization. We also had to rely on **readxl** since the data set we were eokring with did not come from a package or so, but was an exisiting exel sheet. 
+*What we did:* we relied on the basic r packages, like **tidyverse** and **ggplot** for visualization. We also had to rely on **readxl** since the data set we were wokring with did not come from a package or so, but was an existing Exel sheet. 
 
 *What worked well:* Installing them
 
-*What was hard:* The big question was how we would ensure reproducabilty, as one needs all the packages we used to run our code. We solved this by setting it up in the "Set-up.R" file, to make sure that any packages that might be missing on your devise, will be installed previous to any further analysis steps. 
+*What was hard:* The big question was how we would ensure reproduceability, as one needs all the packages we used to run our code. We solved this by setting it up in the "Set-up.R" file, to make sure that any packages that might be missing on your devise, will be installed previous to any further analysis steps. 
+We also decided against creating our own package, as we didn't rely on many functions and mostly coded working directly with the data. We realized too late that we could have relied on the natural structure of packages, which could have saved as some time looking back. In the end we didn't want to change the entire repository structure, out of fear of messing something up.
 
 ### Initial data analysis & data cleaning (W7)
 
@@ -106,11 +108,11 @@ if we relied on replacement rate, the aid would depend on how much the parent ea
 
 ## Workflow & collaboration
 
-*How did we divide work across group members?* Each member focused on one question. Everybody worked from the main branch, but had an indivudal r script regarding the question they focused on. We tought this would be the easiest way to later gather all the information.
+*How did we divide work across group members?* Each member focused on one question. Everybody worked from the main branch. We thought this would be the easiest way to later gather all the information.
 
 *What branching or Git workflow did we actually use — and did it match the proposal?*
 
-*What would we change about how we coordinated?*
+*What would we change about how we coordinated?* Splitting up into branches might have been better, as sometimes two people were working on the same script, which could have caused some merging issues. If we had relied on branches, we could have done more work individually without being afraid to mess with somebody elses work.
 
 ## LLM usage
 
@@ -119,12 +121,12 @@ Describe up to 5 significant uses of an LLM tool during the project.
 Sarah:
 - help with detecting mistakes in my code, or when i didn't get the results i wanted
 - help clean up code
-
+- make stastical decision on how to proceed.
 ### Usage 1: [task]
 
-- **Tool / model:**
-- **What it produced:**
-- **What we had to correct or verify:**
+- **Tool / model:** Claude
+- **What it produced:** how to portray the absolute differences in one plot
+- **What we had to correct or verify:** the entire code structure. CLaude suggested a ggplot-message, but kept on mixing up x- and y-axis. It gave us a rough structure to  work with and let us now what elements were needed. But we had to code the final plot by ourselves.
 
 ### Usage 2: [task]
 
