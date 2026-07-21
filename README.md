@@ -1,6 +1,6 @@
 # Maternity Leave Regulations in Europe
 
-**Authors**: Sarah Puthiaparampil, Lara , Yankui
+**Authors**: Sarah Puthiaparampil, Lara Cyrani , Yankui
 
 ## General Instructions 
 
