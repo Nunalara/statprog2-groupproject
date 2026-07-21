@@ -2,6 +2,12 @@
 title: "Info page"
 format: html
 ---
+```{r setup, include=FALSE}
+source("code/1_Setup.R")
+source("code/2_EDA.R")
+source("code/3_Correlation.R")
+source("code/4_Model.R")
+```
 
 ## Introduction
 
@@ -30,7 +36,7 @@ The variation in maternity leave policies across European countries provides a u
 - Wage inequality\
 - Career interruptions and job mobility
 
-By comparing countries, it becomes possible to identify patterns and better understand the role of policy in shaping labor market behavior.
+By comparing countries, it becomes possible to identify patterns and better understand the role of policy in shaping the possible effect of maternity leave on labor market behavior.
 
 ## Link to This Project
 
@@ -44,7 +50,7 @@ Key dimensions of the dataset include the maximum duration of paid parental leav
 
 Overall, the dataset enables cross-country comparisons of maternity and parental leave policies by focusing on policy design, benefit structures (flat-rate vs. earnings-related), and the extent of job protection.
 
-By analyzing cross-country differences, we aim to explore how institutional variations relate to labor market outcomes and gender equality. The project contributes to a broader understanding of how policy design can support both economic participation and social equity. To limit the scope of the project, we focused on an explorative analysis, focusing on the length of a parental leave, especially the length of the motherhood leave, and how that might have changed over the years and might vary from country to country. We were also interested to check the financial aid each state offered, so we looked at the financial compensation parents get on top of or instead of leave time. We summarized these interest into the following hypotheses.
+By analyzing cross-country differences, we aim to explore how institutional variations relate to labor market outcomes and gender equality. The project contributes to a broader understanding of how policy design can support both economic participation and social equity. To limit the scope of the project, we focused on an explorative analysis, focusing on the length of a parental leave, with a  foucs on the length of the motherhood leave, and how that might have changed over the years and might vary from country to country. We were also interested to check the financial aid each state offered, so we looked at the financial compensation parents get on top of or instead of leave time. We summarized these interest into the following hypotheses.
 
 ## Research Questions
 
@@ -56,27 +62,45 @@ By analyzing cross-country differences, we aim to explore how institutional vari
 
 ## Explorative Data Analysis
 
-### Duration of Motherhood leave (frage 1)
+### Duration of Motherhood leave
 
 We first looked at how the average maternity leave has changed over time. we calculated the average across all countries and checked the progression over the years from 1970 to 2024.
 
-ADD PICTURE.
+![](Project_files/plots/avg_maternity.png)
 
-The plot shoes how there has been an overall upwards trend, especially following 1985. with a recent decrease starting about 2011. To better understand how this might come to be, we have to take a more detailed look at each country individually.
-When looking at the average length of maternity leave we focused on the total maternity rate, which is the sum of voluntary and mandatory maternity leave. But this is handeled very differntly depending on the country. So it was worth looking at this seperatly.
+The plot shoes how there has been an overall upwards trend, especially following 1985, with a recent decrease starting about 2011. To better understand how this might come to be, we have to take a more detailed look at each country individually.
 
-ADD PLOTS (voluntary vs mandatory)
+When looking at the average length of maternity leave we focused on the total maternity rate, which is the sum of voluntary and mandatory maternity leave. We also looked how each type of maternity leave changed over the years.
+![](Project_files/plots/mat_vol.png)
+we can see that there has been a constant incline in mandatory maternity leave, but that has stagnated starting 2014. the Voluntary maternity, allthough increasing, has not shown a similar consistent movement. There appears to be a sudden drop, starting the same year the mandatory leave got fixiated. 
 
-we can now see that some country only offer one of these types (DE, EE), while some offer both. for some countries this also has changed over the years (e.g. NO,FR).
-To be better able to compare countries we calculated the absolute differences, and portrayed them using color to differentiate between the types of maternity leaves offered. 
+So far we have looked at an average calculated for all 25 countries in the data set. But in reality the maternity regulation vary greatly from country to country. The following plot looks at the absolute difference, comparing the years 1970 with 2024 for each country, while differentiating between mandatory and voluntary maternity leave.
 
-The reason for some countries maybe only offering one of the types might have to due with other systemic support given to parents, which brings us to our second point of analysis: Financial aid given by the country's government.
+![](Project_files/plots/comparison.png)
 
-ADD MODEL
+we can now see that some country only offer one of these types (DE, EE), while some offer both. For some countries this also has changed over the years (e.g. NO,FR).
 
-### Financial aid during motherhood leave (Frage 3)
-As mentioned in the Theory page, we need to compare between flat rate and replacement rate. especially northern countries prefer the second option???? (FACT CHECK).
+The reason for some countries to maybe only offer one of the types might have to due with other systemic support given to parents, which brings us to our second point of analysis:
 
+### Financial aid during motherhood leave
+
+As mentioned in the Theory page, we need to compare between flat rate and replacement rate. especially northern countries prefer the second option. When taking a closer look at the data, we were faced with a lot of NAs, because of that we only looked at countries relying on the replacement rate scheme., which left us with 15 countries to study. Again, it is important to consider the meaning of the values: Even though there is a lot of variation in a cross-country analysis, within each country not a lot changes, as rate of what a parent receives is usually fixed by policies. So not a lot changed over long spans. Because of that we only focused on the most recent years, starting from 2010 onwards. For statistical completeness, we did check the correlation within each country, and found some results: 
+
+```{r, echo = FALSE}
+country_rr |> 
+  drop_na(pearson, spearman)
+```
+There seems to be a strong positive correlation for Finnland, indicating that if the length of duration increases, the rate returned to mothers seems to be higher. For Lettland it seems to be the oposite, both the Pearson coeffizient as well as Spearman appear negative. We must highlight that we are looking at very little data (n= 15), so that might cause some disturbance.
+
+When looking at the overall correlation for just 2024 we found that that there is a slight positive correlation: 
+```{r, echo=FALSE}
+cor(cor_rr_country$par3_ld, cor_rr_country$par3_rr, method = "pearson")
+cor(cor_rr_country$par3_ld, cor_rr_country$par3_rr, method = "spearman")
+```
+to better understand why the correlation is so low we have a scatterplot which is a cross-country snapshot — one point per country, using each country's most generous (highest replacement-rate) scheme.
+
+![](Project_files/plots/correlation.png)
+Across the 14 countries, leave duration and replacement rate show little systematic relationship (r ≈ [insert your coefficient]), and the scatter plot makes clear why: countries combine these two policy dimensions in very different ways rather than trading one off against the other. Some countries pair short leave with high generosity (Norway, the UK), while others pair long leave with equally high replacement rates (Germany, Estonia), and Lithuania offers long leave at a more moderate rate. Hungary stands out as the clearest outlier, combining both the shortest leave duration and the lowest replacement rate in the sample, and its position likely has an outsized influence on the correlation estimate given the small sample size (n = 14). Rather than reflecting a simple duration–generosity trade-off, the pattern suggests that leave duration and replacement rate are largely independent policy choices, shaped by each country's distinct approach to family leave rather than a shared underlying logic.
 
 ## Prediction
 

@@ -2,8 +2,6 @@
 # 2)  How has voluntary maternity leave changed compared to mandatory maternity leave across countries?
 ################################################################################
 #data preparation
-library(dplyr)
-library(tidyr)
 
 leave_data <- data |>
   select(country, year,
@@ -36,7 +34,7 @@ model_general <- lm(
   data = leave_long
 )
 
-summary(model_1)
+summary(model_general)
 
 #creating a linear model considering the countries
 model_countries <- lm(
@@ -45,27 +43,6 @@ model_countries <- lm(
 )
 
 summary(model_countries)
-
-#general visualisation 
-ggplot(leave_long,
-       aes(year,
-           leave_duration,
-           colour = type)) +
-  
-  stat_summary(
-    fun = mean,
-    geom = "line",
-    linewidth = 1.2
-  ) +
-  
-  labs(
-    title = "Average Mandatory and Voluntary Maternity Leave",
-    x = "Year",
-    y = "Leave duration (weeks)",
-    colour = "Leave type"
-  ) +
-  
-  theme_light()
 
 #visualization across countries
 leave_long$predicted <- predict(model_countries)

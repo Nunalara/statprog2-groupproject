@@ -141,12 +141,12 @@ Describe up to 5 significant uses of an LLM tool during the project.
 Sarah:
 - help with detecting mistakes in my code, or when i didn't get the results i wanted
 - help clean up code
-- make stastical decision on how to proceed.
+- make statistical decision on how to proceed.
 ### Usage 1: [task]
 
 - **Tool / model:** Claude
 - **What it produced:** how to portray the absolute differences in one plot
-- **What we had to correct or verify:** the entire code structure. CLaude suggested a ggplot-message, but kept on mixing up x- and y-axis. It gave us a rough structure to  work with and let us now what elements were needed. But we had to code the final plot by ourselves.
+- **What we had to correct or verify:** the entire code structure. Claude suggested a ggplot-message, but kept on mixing up x- and y-axis. It gave us a rough structure to  work with and let us now what elements were needed. But we had to code the final plot by ourselves.
 
 ### Usage 2: Finding mistakes in code
 
@@ -158,4 +158,4 @@ Sarah:
 
 - **Tool / model:** ChatGPT
 - **What it produced:** it's interpretation of outcomes and recommendations for a cleaner code
-- **What we had to correct or verify:** Everything, since it was used for comparision and not blunt production
+- **What we had to correct or verify:** Everything, since it was used for comparison and not blunt production

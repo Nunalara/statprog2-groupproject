@@ -68,15 +68,16 @@ cor(cor_rr_country$par3_ld, cor_rr_country$par3_rr, method = "spearman")
 ## Pearson: 0,27 --> slightly positive, linear relationship
 
 # plot
-ggplot(cor_rr_country, aes(x = par3_ld, y = par3_rr, label = country)) +
+plot_correlation <- ggplot(cor_rr_country, aes(x = par3_ld, y = par3_rr, label = country)) +
   geom_point(size = 3) +
-  geom_text(vjust = -1) +
+  geom_text(vjust = 2) +
   labs(
     x = "Leave duration (weeks, highest replacement-rate scheme)",
     y = "Replacement rate (%)",
-    title = "Replacement rate vs. leave duration across countries (from 2010 onwards)"
+    title = "Replacement rate vs. leave duration across countries"
   )+
   theme_light()
+ggsave("Project_files/plots/correlation.png", plot = plot_correlation,  create.dir = TRUE)
 
 ## Model
 model_rr <- lm(par3_rr ~ par3_ld, data = cor_rr_country)
