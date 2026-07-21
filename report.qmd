@@ -19,7 +19,7 @@ If you did not use a skill, say so and note why.
 
 ### Debugging (W3)
 
-*What we did:*
+*What we did:* this depends on everyone's individual usage --> see individual  reflection.
 
 *What worked well:*
 
@@ -35,19 +35,19 @@ If you did not use a skill, say so and note why.
 
 ### Quarto websites & collaborative coding (W5)
 
-*What we did:*
+*What we did:* we didnt branch our repository, as we thought it was best to avoid any merging issues in the long game. It turned out to be a good decision, as we didn't have too many different documents to work on so it was fine in the end. For a bigger, more detailed analysis this would not have worked out.
 
 *What worked well:*
 
-*What was hard:*
+*What was hard:* since multiple people worrked on the same script, there was the fear of maybe deleting each others progress. we tried to avoid this by working in different sections, so everyone woudl focus on their individual question.
 
 ### R packages (W6)
 
-*What we did:*
+*What we did:* we relied on the basic r packages, like **tidyverse** and **ggplot** for visualization. We also had to rely on **readxl** since the data set we were eokring with did not come from a package or so, but was an exisiting exel sheet. 
 
-*What worked well:*
+*What worked well:* Installing them
 
-*What was hard:*
+*What was hard:* The big question was how we would ensure reproducabilty, as one needs all the packages we used to run our code. We solved this by setting it up in the "Set-up.R" file, to make sure that any packages that might be missing on your devise, will be installed previous to any further analysis steps. 
 
 ### Initial data analysis & data cleaning (W7)
 
