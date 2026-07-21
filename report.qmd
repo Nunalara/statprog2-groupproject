@@ -11,7 +11,7 @@ If you did not use a skill, say so and note why.
 
 ### Functions & refactoring (W2)
 
-*What we did:*
+*What we did:* 
 
 *What worked well:*
 
@@ -27,7 +27,7 @@ If you did not use a skill, say so and note why.
 
 ### Version control & remotes (W4)
 
-*What we did:*
+*What we did:* We used git status to check up on the latest updates. We relied on the got commit messages to summarise any changes made. 
 
 *What worked well:*
 
@@ -40,7 +40,7 @@ In terms of the website, only one person was responsible for the web layout. We 
 
 *What worked well:*
 
-*What was hard:* since multiple people worked on the same script, there was the fear of maybe deleting each others progress. we tried to avoid this by working in different sections, so everyone woudl focus on their individual question.
+*What was hard:* since multiple people worked on the same script, there was the fear of maybe deleting each others progress. we tried to avoid this by working in different sections, so everyone would focus on their individual question.
 
 ### R packages (W6)
 
@@ -53,7 +53,7 @@ We also decided against creating our own package, as we didn't rely on many func
 
 ### Initial data analysis & data cleaning (W7)
 
-*What we did:* We first all took a look at the raw data, and tried to understand what the variables represent. The first thing we notices, what that for some variables (e.g. par_1_rr for CZ) we had a lot of missing values, which were not coded as such. We also relazied that we were eokring with categorized variables, and discussed how to handle this best.
+*What we did:* We first all took a look at the raw data, and tried to understand what the variables represent. The first thing we notices, what that for some variables (e.g. par_1_rr for CZ) we had a lot of missing values, which were not coded as such. We also realzied that we were working with categorized variables, and discussed how to handle this best.
 
 *What worked well:* clearing out the NAs?
 
@@ -82,7 +82,7 @@ We also decided against creating our own package, as we didn't rely on many func
 *What worked well:*
 
 *What was hard:* 
-choosing what facets to use, to try and avoid overplotting. Picking a good color sheme that would remain consistent throughout all projects.
+choosing what facets to use, to try and avoid overplotting. Picking a good color scheme that would remain consistent throughout all projects.
 
 ## Key analytical decisions
 
