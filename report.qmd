@@ -11,11 +11,11 @@ If you did not use a skill, say so and note why.
 
 ### Functions & refactoring (W2)
 
-*What we did:* 
+*What we did:* We used a linear model as a function for the 2nd question.
 
-*What worked well:*
+*What worked well:* coding and using it.
 
-*What was hard:*
+*What was hard:* /
 
 ### Debugging (W3)
 
@@ -69,20 +69,26 @@ We also decided against creating our own package, as we didn't rely on many func
 
 ### Analysis & inference strategies (W10)
 
-*What we did:*
+*What we did:* we used the packages dplyr, tidyr, and ggplot2. Before the analyses, the dataset was cleaned by replacing the missing value codes (-98 and -99) with NA values. Only the variables relevant to the research questions were selected.
+
+For the descriptive analysis, summary statistics and line plots were used to examine how maternity leave policies changed over time and differed across countries. These visualisations helped identify trends and country-specific developments.
+
+For the explanatory analysis, the relationship between maternity leave duration and financial support was examined using correlation analysis and scatter plots. This allowed us to assess whether longer maternity leave is associated with higher levels of financial compensation.
+
+To compare mandatory and voluntary maternity leave, a multiple linear regression model was estimated with leave duration as the dependent variable and year, leave type (mandatory vs. voluntary), and country as explanatory variables. An interaction term between year and leave type was included to test whether the development of the two leave types differed over time. Statistical significance was assessed using the regression coefficients and their associated p-values, while the coefficient of determination (R²) was used to evaluate the explanatory power of the model.
 
 *What worked well:* The EDA was quite interesting and an important step beofre getting to fit the models, it helped understand the data better and what is trying to tell. 
 
-*What was hard:*
+*What was hard:* accepting non-significant outcomes, deleting the predictive question due to our feedback
 
 ### Communication & visualisation (W11)
 
-*What we did:*
+*What we did:* we plotted every result we had to relatably present it and support our results.
 
-*What worked well:*
+*What worked well:* coding the plot itself was rather easy 
 
 *What was hard:* 
-choosing what facets to use, to try and avoid overplotting. Picking a good color scheme that would remain consistent throughout all projects.
+choosing what facets to use, to try and avoid overplotting. Picking a good color scheme that would remain consistent throughout all projects. Estimating the amount of written texts(as interpretations added)
 
 ## Key analytical decisions
 
@@ -98,13 +104,27 @@ if we relied on replacement rate, the aid would depend on how much the parent ea
 
 *In hindsight, would we decide differently?*
 
-### Decision 2: [short title]
+### Decision 2: Amount of observed countries
 
 *What were we deciding between?*
+We were wondering if we should use all provided countries, a certain region or only a few selected.
 
 *How did we reason through it?*
+We discussed alot about the statistical meaning being manipulated by too many NAs in certain countries, as well as having too chaotic plots, if all countries are being used. But scientifical completeness was more relevant for us than other arguments.
 
 *In hindsight, would we decide differently?*
+In between we already designed plots for only 4 countries but eventually changed using all observed ones. Therefore, we wouldn't decide differently.
+
+### Decision 3: parental vs. maternal leave
+
+*What were we deciding between?*
+How we should differ or choose between variables considering maternal or parental leaves.
+
+*How did we reason through it?*
+Again, we wondered how scientifical correct it was, leaving one out, but then argued with transparent communication. Also, it would've taken too much capacity for the course always considering both.
+
+*In hindsight, would we decide differently?*
+No, only if we had more time.
 
 ## Workflow & collaboration
 
@@ -128,8 +148,14 @@ Sarah:
 - **What it produced:** how to portray the absolute differences in one plot
 - **What we had to correct or verify:** the entire code structure. CLaude suggested a ggplot-message, but kept on mixing up x- and y-axis. It gave us a rough structure to  work with and let us now what elements were needed. But we had to code the final plot by ourselves.
 
-### Usage 2: [task]
+### Usage 2: Finding mistakes in code
 
-- **Tool / model:**
-- **What it produced:**
-- **What we had to correct or verify:**
+- **Tool / model:** ChatGPT
+- **What it produced:** a recommendation of what we did wrong, mostly on very trivial things (typos, wrong path)
+- **What we had to correct or verify:** We tried out the suggestions until they worked.
+
+### Usage 3: Having a second opinion for code strategy and interpretation
+
+- **Tool / model:** ChatGPT
+- **What it produced:** it's interpretation of outcomes and recommendations for a cleaner code
+- **What we had to correct or verify:** Everything, since it was used for comparision and not blunt production
