@@ -49,6 +49,15 @@ data_expl <- data |>
           currency) |>
   mutate(across(where(is.numeric), ~ na_if(.x, -98))) |>
   mutate(across(where(is.numeric), ~ na_if(.x, -99))) |>
+
+##still -98 in par1_for_whom,par2_for_whom, par3_for_whom, therefore separately adjusting it
+data_expl <- data_expl |>
+  mutate(
+    par1_for_whom = na_if(par3_for_whom, "-98"),
+    par2_for_whom = na_if(par3_for_whom, "-98"),
+    par3_for_whom = na_if(par3_for_whom, "-98")
+  )
+
   ## calculate maternity leave
   mutate(
     mat_ld_total = rowSums(across(c(mat_m_ld_bb, mat_m_ld_ab, mat_v_ld_bb, mat_v_ld_ab)), na.rm = TRUE),
