@@ -104,6 +104,19 @@ Across the 14 countries, leave duration and replacement rate show little systema
 
 ## Prediction
 
+### General Model
+
+```{r, echo=FALSE}
+summary(model_general)
+```
+
+
+### Model over countries 
+
+```{r, echo=FALSE}
+summary(model_countries)
+```
 
 
 
+![](Project_files/plots/model_plot.png)
