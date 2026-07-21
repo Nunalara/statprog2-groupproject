@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Info page"
 format: html
 ---
 
