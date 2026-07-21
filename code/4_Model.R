@@ -84,7 +84,7 @@ ggplot(leave_long,
     y = "Leave duration (weeks)",
     colour = "Leave type"
   ) +
-  theme_bw()
+  theme_light()
 
 
 #interpretation
