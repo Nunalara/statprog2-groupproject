@@ -1,9 +1,8 @@
 ---
-title: "(final) Project"
+title: "The European Parenting Leave Policies (EPLP) Dataset"
 format: html
 ---
 
-# The European Parenting Leave Policies (EPLP) Dataset 
 
 ## Group Members
 
@@ -28,7 +27,7 @@ format: html
 ```         
 data/raw/        read-only raw data and licence documentation
 data/processed/  cleaned data produced by code/02_clean.R
-code/            numbered R scripts (01 download → 02 clean → 03 EDA → 04 analysis)
+code/            numbered R scripts (01 Set_up → 02 EDA → 03 Analysis → 04 Model)
 docs/            rendered Quarto website output (auto-generated, do not edit)
 proposal.qmd     W07 project proposal
 report.qmd       final analysis report

@@ -2,11 +2,11 @@
 # 3)  How do duration of maternity leave and amount of financial support correlate?
 ################################################################################
 
-## trial: data from 2000 onwards
+## data from 2010 onwards --> frist plot: sudden dicrease since 2010
 
 # step 1: check for amount of NAs for the funding variable, and then check values
-data_corr <- data |>
-  filter(year %in% c(2000:2024)) |>
+data_corr <- data_expl |>
+  filter(year %in% c(2010:2024)) |>
   mutate(across(where(is.numeric), ~ na_if(.x, -98))) |>
   mutate(across(where(is.numeric), ~ na_if(.x, -99)))
 
@@ -21,66 +21,64 @@ na_check <- data_corr |>
     na_rr3 = sum(is.na(par3_rr))
   )
 
-na_check ## only check the flat rate for AT; BE, EE FR
-## check only replacement rate: CZ, DE, ES, GR
+na_check ## Drop fixed rate, to many NAs
 
-## data for fixed rate
-data_corr_fr <- data_corr |>
-  filter(country %in% c("AT","BE","EE","FR"))
+# check Correlation for replacement rate scheme --------------------------------
 
-## data for replacement rate
-data_corr_rr <- data_corr |>
-  filter (country %in% c("DK","FI","EE", "DE"))
-
-## check for values throughout the years
-#duration for fixed rate
-ggplot(data_corr_fr, aes(x = year, y = par2_ld, color = country))+
-  geom_line()+
-  labs(title = "Duration of leave from 2000 to 2024 when receiving a fixed rate",
-       x = "Year",
-       y = "Weeks")
-# fixed rate
-ggplot(data_corr_fr, aes (x = year, y = par2_fr, color = country))+
-  geom_line()+
-  labs(title = "Fixed rate 2000 to 2024",
-       x = "Year",
-       y = "Price")
-
-#duration replacement rate
-ggplot(data_corr_rr, aes(x = year, y = par3_ld, color = country))+
-  geom_line()+
-  labs(title = "Duration of leave from 2000 to 2024 when receiving a replacement rate",
-       x = "Year",
-       y = "Weeks")
-
-ggplot(data_corr_rr, aes(x = year, y = par3_rr, color = country))+
-  geom_line()+
-  labs(title = "Replacement rate from 2000 to 2024",
-       x = "Year",
-       y = "Rate")
-## clear confusion: plot missing for DE?
-data_corr_rr |>
-  filter(country == "DE") |>
-  select(year, par3_ld, par3_rr) |>
-  print(n = 25)
-## Nope, just overlap
-
-# Correlation check ------------------------------------------------------------
-cor_fr <- data_corr_fr |>
+## countries where par3_rr is actually populated
+rr_countries <- data_corr |>
   group_by(country) |>
-  summarise(
-    n_obs    = sum(!is.na(par2_ld) & !is.na(par2_fr)),
-    pearson  = cor(par2_ld, par2_fr, method = "pearson", use = "complete.obs"),
-    spearman = cor(par2_ld, par2_fr, method = "spearman", use = "complete.obs")
-  )
-cor_fr
+  summarise(n_valid_rr = sum(!is.na(par3_ld) & !is.na(par3_rr))) |>
+  filter(n_valid_rr > 0) |>
+  pull(country)
 
-cor_rr <- data_corr_rr |>
+rr_countries
+
+## data for replacement-rate countries
+data_corr_rr <- data_corr |>
+  filter(country %in% rr_countries)
+
+## within country correlation
+country_rr <- data_corr_rr |>
   group_by(country) |>
   summarise(
     n_obs    = sum(!is.na(par3_ld) & !is.na(par3_rr)),
     pearson  = cor(par3_ld, par3_rr, method = "pearson", use = "complete.obs"),
     spearman = cor(par3_ld, par3_rr, method = "spearman", use = "complete.obs")
   )
+country_rr ## A lot of NAs, as there is no Variance within a country,as the policies are fixed
+## strong positive linear correlation for Finnland!
+## slight positive correlation, but weak for Poland.
+## negative Correlation for Lettland? (LT)
+# cross country correlation ----------------------------------------------------
+## one row per country: most recent year with valid data
+cor_rr_country <- data_corr_rr |>
+  filter(!is.na(par3_ld), !is.na(par3_rr)) |>
+  group_by(country) |>
+  slice_max(year, n = 1, with_ties = FALSE) |>
+  ungroup() |>
+  select(country, year, par3_ld, par3_rr)
 
-cor_rr
+cor_rr_country
+
+cor(cor_rr_country$par3_ld, cor_rr_country$par3_rr, method = "pearson")
+cor(cor_rr_country$par3_ld, cor_rr_country$par3_rr, method = "spearman")
+## there is a slight positive correlation for both!
+## Spearman: 0,24 --> weak positive correlation
+## Pearson: 0,27 --> slightly positive, linear relationship
+
+# plot
+ggplot(cor_rr_country, aes(x = par3_ld, y = par3_rr, label = country)) +
+  geom_point(size = 3) +
+  geom_text(vjust = -1) +
+  labs(
+    x = "Leave duration (weeks, highest replacement-rate scheme)",
+    y = "Replacement rate (%)",
+    title = "Replacement rate vs. leave duration across countries (from 2010 onwards)"
+  )+
+  theme_light()
+
+## Model
+model_rr <- lm(par3_rr ~ par3_ld, data = cor_rr_country)
+summary(model_rr) ## doesn't make sense, variance between countries is to big to fit into one model.
+

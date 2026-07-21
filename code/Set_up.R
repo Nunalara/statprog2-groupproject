@@ -19,8 +19,7 @@ for (pkgs in packages) {
   }
 }
 
-
-
+## Download data
 data <- readxl::read_excel(
   "data-raw/EPLP_Dataset_Workbook_v2.xlsx",
   sheet = "Dataset",
@@ -66,3 +65,4 @@ data_expl |>
 
 
 ## fixed color scale
+
