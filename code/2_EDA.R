@@ -17,7 +17,7 @@ plot_avg_mat <- data_expl |>
   theme_light()
 
 #plot_avg_mat
-ggsave("Project_files/plots/avg_maternity.png", plot = plot_avg_mat,  create.dir = TRUE)
+ggsave("Project_files/plots/avg_maternity.png", plot = plot_avg_mat,  create.dir = TRUE, width = 18, height = 9, dpi = 300)
 
 ## Plot: voluntary vs. mandatory------------------------------------------------
 leave_long <- data_expl |>
@@ -44,7 +44,7 @@ plot_mat_vol <- ggplot(leave_long,aes(year, leave_duration, colour = type)) +
     colour = "Leave type"
   ) +
   theme_light()
-ggsave("Project_files/plots/mat_vol.png", plot = plot_mat_vol, create.dir = TRUE)
+ggsave("Project_files/plots/mat_vol.png", plot = plot_mat_vol, create.dir = TRUE, width = 18, height = 9, dpi = 300)
 
 ## Plotting the offered lengths of maternity leave -----------------------------
 plot_mat_length <- ggplot(data_expl, aes(x = mat_ld_total)) +
@@ -57,7 +57,7 @@ plot_mat_length <- ggplot(data_expl, aes(x = mat_ld_total)) +
   theme_light()
 
 plot_mat_length
-ggsave("Project_files/plots/maternity_length.png", plot = plot_mat_length,  create.dir = TRUE)
+ggsave("Project_files/plots/maternity_length.png", plot = plot_mat_length,  create.dir = TRUE, width = 18, height = 9, dpi = 300)
 ## we didn't use this, as we relaized the count is being calculated for multiple years so it wouldn't make any sense 
 
 ## Maternity leave for women 1970 vs 2024 --------------------------------------
@@ -144,4 +144,4 @@ plot_comparison <- ggplot(diff_data, aes(y = country, x = diff, fill = type)) +
   ) +
   theme_light()
 
-ggsave("Project_files/plots/comparison.png", plot = plot_comparison,  create.dir = TRUE)
+ggsave("Project_files/plots/comparison.png", plot = plot_comparison,  create.dir = TRUE, width = 18, height = 9, dpi = 300)
