@@ -1,0 +1,19 @@
+---
+title: "Sarah"
+output: html_document
+---
+## Individual tasks
+### Project work
+I worked on Setup.R, EDA.R and Correlation.R. I created the Project.qmd as well as the index.qmd and helped fill out the group reflection along side Lara. I made sure each plot was saved as an image. Because i took care of the final presentation, i was also "forced" to take care of the repository structure.
+
+My main task originally was to focus on the exploratory question, but near the end I took up more task. But i focused a lot on the exploratory analysis of the data, and it took me quite some time to understand the datset and how to work with the three schemes with how they were presented.
+
+My and Lara had a final discussion towards the end, were we each presented our results. We discussed some final thoughts: i had at first suggested selecting only specific countries for analysis (e.g. Country where voluntary maternity leave was only added later, or where it was removed). I hadn't gotten any feedback, but she had implemented it in her models at first. in the end we decided to drop it, because in my correlation check some countries were filtered out naturally. The decision to compare the different scheme (maximum duration vs. fixed rate vs. replacement rate) was a decision i made on my own. I also would have liked to compare maternity leave with paternity leave, but it was not possible to focus on so many topics on my own, and it wasn't a decision i wanted to make on my own. 
+
+
+## LLM Usage
+Because i had a hard time just understanding the data, or more precisely how to work with it and interpret it, i relied a lot on LLM to explain that to me. Because i was more used to working with Claude, i only used that. The question i asked most often was like "How do i treat var XXX", "What does it mean? How do i interpret that?".
+
+When it came to coding, i am quite comfortable with tidyverse. And because i was so focused on understanding the data nd being able to actually present some valuable results, i worked directly with the code. Because of that, i didn't write any functions, because i was not focused on getting a lot of plots, just a view that told a story. I did struggle with the plot presenting both mandatory and voluntary leave while comparing the absolute differences. I had a rough sketch of the plot, but i did need the helped to center the data the right way and add a vertical line and stuff.
+
+I mostly relied on Claude to help me understand warnings and error messages and fix them. Most of them were because of typos, Claude helped me find them. Also when it came to rendering the final project.qmd there were some issues with rendering all the files, (again because of typos or not using the right lingo for Quarto), i got it fixed through using the LLM.
