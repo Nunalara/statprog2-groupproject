@@ -56,7 +56,7 @@ By analyzing cross-country differences, we aim to explore how institutional vari
 
 1.  **Descriptive/Exploratory** : How has maternity leave changed over the years depending on countries? How does maternity leave change depending on the country, comparing types of maternity leave and aid ?
 
-2.  **Predictive** : How is maternity leave going to change in future per country?
+2.  **Explanatory** : How has voluntary maternity leave changed compared to mandatory maternity leave across countries?
 
 3.  **Explanatory** : How do duration of maternity leave and amount of financial support correlate?
 
