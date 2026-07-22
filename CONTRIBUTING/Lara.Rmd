@@ -1,0 +1,19 @@
+---
+title: "Lara"
+output: html_document
+---
+## Individual tasks
+### Project work
+I worked on 4_Model.R, 5_Predictive.R as well as the proposal.qmd. Together with Sarah I filled out the group reflection.I added "my" answers to the index.qmd and corrected mistakes I found.I added the model plots as an image.I looked through every file and corrected mostly small mistakes as typos, labels or content issues.I also initiate the group meetings and firstly took care of having an overview of internal organization. Due to health issues, then Sarah took over having an overview and did a lot(!) for the whole project structure.
+
+Sarah and I had a final discussion towards the end, in which we presented each other our results. Generally, she and I stayed mostly well in touch over the whole project. We discussed some final thoughts, i.e. I suggested alternative questions to the predictive question or which countries we should select for our final version, since she suggested using only 4. 
+
+I really enjoyed working on the predictive question, especially because I'm always having lots of fun with plotting. During working on that question I already noticed how the prediction (especially via a linear regression) seemed not very reliable. After receiving the feedback, which criticized the predictive question as well, I eventually decided to not take it into to final project, but only mention it instead.I still added it into the "Code" branch, so the work I did was still open to inspection. I really struggled finding a different question I was interested in but also included a model, which still fitted our variables and which matched our capacities. 
+
+I generally was interested in a lot of questions concerning the large data set we used, but getting familiar with the variables was indeed an obstacle. I would've especially wanted to compare variables as maternal and paternal leave, different types of compensations and other possible socio-economical correlations, but we chose the "final-original" three questions, and therefore the used variables, as a team. 
+
+## LLM Usage
+If I used LLMs it was reduced to ChatGPT to clean my code or to -ironically-  finding very basic errors (such as typos, being in the wrong path, forgot loading the data or a package), before frustrating too much.Therefore, I really got familiar with basic codes as getwd(). Since I was somehow very insecure about my statistical models and interpretations in the project itself, I used ChatGPT as a second opinion, which mostly agreed to what I did. I also asked it for alternative models for the predictive question, since linear regression as well as a polynomial regression didn't seem correct, but its recommendations were a little too complex for my knowledge.
+
+##Future motivation
+In hindsight, I wish I used the console more to also work on the git repository. Generally, I do think I got a little more familiar with GitHub, since I've never used it before, but I know that I could've used its functions even more. I'm also inspired to work with python and on more complex projects, knowing what I should consider now.
