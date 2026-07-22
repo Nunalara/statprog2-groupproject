@@ -2,7 +2,7 @@
 # 3)  How do duration of maternity leave and amount of financial support correlate?
 ################################################################################
 
-## data from 2010 onwards --> frist plot: sudden dicrease since 2010
+## data from 2010 onwards --> first plot: sudden dicrease since 2010
 
 # step 1: check for amount of NAs for the funding variable, and then check values
 data_corr <- data_expl |>
@@ -50,12 +50,13 @@ country_rr ## A lot of NAs, as there is no Variance within a country,as the poli
 ## strong positive linear correlation for Finnland!
 ## slight positive correlation, but weak for Poland.
 ## negative Correlation for Lettland? (LT)
+
 # cross country correlation ----------------------------------------------------
 ## one row per country: most recent year with valid data
 cor_rr_country <- data_corr_rr |>
   filter(!is.na(par3_ld), !is.na(par3_rr)) |>
   group_by(country) |>
-  slice_max(year, n = 1, with_ties = FALSE) |>
+  slice_max(year, n = 1, with_ties = FALSE) |> ## checks for the most recent year the the most values
   ungroup() |>
   select(country, year, par3_ld, par3_rr)
 

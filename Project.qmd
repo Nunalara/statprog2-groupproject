@@ -36,4 +36,4 @@ report.qmd       final analysis report
 
 first open the script "Set_up.R" to get access to the raw data, as well as the data table we worked throughout this project. Afterwards run trough every script, to access all the code and plots. 
 Otherwise skip to the "Home" page on the website, to see our final results. We first present some theoretical background, as well as our motivation for this project. This is then followed by our analysis and the results, closing with a summary and interpretation of our models.
-For more information regarding the project work and structure check out the Proposal
+For more information regarding the project work and structure check out the Proposal as well as the README.md in the project repository.

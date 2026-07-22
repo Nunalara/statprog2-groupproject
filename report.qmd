@@ -27,20 +27,19 @@ If you did not use a skill, say so and note why.
 
 ### Version control & remotes (W4)
 
-*What we did:* We used git status to check up on the latest updates. We relied on the got commit messages to summarise any changes made. 
+*What we did:* We used git status to check up on the latest updates. We relied on the got commit messages to summarize any changes made. We didn't branch our repository, as we thought it was best to avoid any merging issues in the long game. It turned out to be a good decision, as we didn't have too many different documents to work on so it was fine in the end. For a bigger, more detailed analysis this would not have worked out 
 
-*What worked well:*
+*What worked well:* the basic git commands, so commit and push. Luckily we had no merge issues, so we did not have to use a lot of git commands outside of this.
 
-*What was hard:*
+*What was hard:* making sure the .gitignore document was set up right.
 
 ### Quarto websites & collaborative coding (W5)
 
-*What we did:* we didn't branch our repository, as we thought it was best to avoid any merging issues in the long game. It turned out to be a good decision, as we didn't have too many different documents to work on so it was fine in the end. For a bigger, more detailed analysis this would not have worked out.
-In terms of the website, only one person was responsible for the web layout. We relied on the sketch offered on the course git and followed that.
+*What we did:* In terms of the website, only one person was responsible for the web layout. We relied on the sketch offered on the course git and followed that.
 
-*What worked well:*
+*What worked well:* Adding the pictures to the plot, and creating a detailed report in a way.
 
-*What was hard:* since multiple people worked on the same script, there was the fear of maybe deleting each others progress. we tried to avoid this by working in different sections, so everyone would focus on their individual question.
+*What was hard:* Since multiple people worked on the same script, there was the fear of maybe deleting each others progress. we tried to avoid this by working in different sections, so everyone would focus on their individual question. Playing around with the layout was difficult to, so we ended up with a very simple design.
 
 ### R packages (W6)
 
@@ -48,30 +47,30 @@ In terms of the website, only one person was responsible for the web layout. We 
 
 *What worked well:* Installing them
 
-*What was hard:* The big question was how we would ensure reproduceability, as one needs all the packages we used to run our code. We solved this by setting it up in the "Set-up.R" file, to make sure that any packages that might be missing on your devise, will be installed previous to any further analysis steps. 
+*What was hard:* The big question was how we would ensure reproducibility, as one needs all the packages we used to run our code. We solved this by setting it up in the "Set-up.R" file, to make sure that any packages that might be missing on your devise, will be installed previous to any further analysis steps. 
 We also decided against creating our own package, as we didn't rely on many functions and mostly coded working directly with the data. We realized too late that we could have relied on the natural structure of packages, which could have saved as some time looking back. In the end we didn't want to change the entire repository structure, out of fear of messing something up.
 
 ### Initial data analysis & data cleaning (W7)
 
-*What we did:* We first all took a look at the raw data, and tried to understand what the variables represent. The first thing we notices, what that for some variables (e.g. par_1_rr for CZ) we had a lot of missing values, which were not coded as such. We also realzied that we were working with categorized variables, and discussed how to handle this best.
+*What we did:* We first all took a look at the raw data, and tried to understand what the variables represent. The first thing we notices, what that for some variables (e.g. par_1_rr for CZ) we had a lot of missing values, which were not coded as such. We also realized that we were working with categorized variables, and discussed how to handle this best.
 
-*What worked well:* clearing out the NAs?
+*What worked well:* clearing out the NAs.
 
 *What was hard:* Deciding which variables were relevant for our analysis, it was difficult to limit the scope of the analysis. It didn't make sense to check out all countries, because some had a lot of NAs, but it would also be statistically incorrect to completly ignore them. We also had to discuss how deal with the NAs, and what types of parental leave we wanted to focus on because we were looking at multiple categories for different types of parental leave.
 
 ### Reproducibility, open data & renv (W9)
 
-*What we did:*
+*What we did:* We relied on our project structure to insure reproducibility. When rendering the Project.qmd, all the code scripts will be sourced in a specific order. the first script (Setup) makes sure all necessary packages will be installed as well as the raw data. It then takes you through every step of analysis we did. We also made sure our data was legally open for access, luckily it had a license for that.
 
 *What worked well:*
 
-*What was hard:*
+*What was hard:* Making sure that the project was actually reproducable, making sure the structure worked.
 
 ### Analysis & inference strategies (W10)
 
 *What we did:* we used the packages dplyr, tidyr, and ggplot2. Before the analyses, the dataset was cleaned by replacing the missing value codes (-98 and -99) with NA values. Only the variables relevant to the research questions were selected.
 
-For the descriptive analysis, summary statistics and line plots were used to examine how maternity leave policies changed over time and differed across countries. These visualisations helped identify trends and country-specific developments.
+For the descriptive analysis, summary statistics and line plots were used to examine how maternity leave policies changed over time and differed across countries. These visualizations helped identify trends and country-specific developments.
 
 For the explanatory analysis, the relationship between maternity leave duration and financial support was examined using correlation analysis and scatter plots. This allowed us to assess whether longer maternity leave is associated with higher levels of financial compensation.
 
@@ -132,17 +131,13 @@ No, only if we had more time.
 
 *What branching or Git workflow did we actually use — and did it match the proposal?*
 
-*What would we change about how we coordinated?* Splitting up into branches might have been better, as sometimes two people were working on the same script, which could have caused some merging issues. If we had relied on branches, we could have done more work individually without being afraid to mess with somebody elses work.
+*What would we change about how we coordinated?* Splitting up into branches might have been better, as sometimes two people were working on the same script, which could have caused some merging issues. If we had relied on branches, we could have done more work individually without being afraid to mess with somebodyelse's work.
 
 ## LLM usage
 
 Describe up to 5 significant uses of an LLM tool during the project.
 
-Sarah:
-- help with detecting mistakes in my code, or when i didn't get the results i wanted
-- help clean up code
-- make statistical decision on how to proceed.
-### Usage 1: [task]
+### Usage 1: Plot portraying the absolute difference in maternity rates over the years
 
 - **Tool / model:** Claude
 - **What it produced:** how to portray the absolute differences in one plot
@@ -159,3 +154,17 @@ Sarah:
 - **Tool / model:** ChatGPT
 - **What it produced:** it's interpretation of outcomes and recommendations for a cleaner code
 - **What we had to correct or verify:** Everything, since it was used for comparison and not blunt production
+
+
+### Usage 4: Statistical reasoning
+
+- **Tool / model:** Claude
+- **What it produced:** Arguments as to how to porceed with the Analysis (for example explain why there were so many NAs for correlation). Helped reasoning in the decision process.
+- **What we had to correct or verify:** Rely on my own statistical knowledge if this what true, and since i din't give claude access to the data or code i had to fact check everything.
+
+### Usage 5: Quarto
+
+- **Tool / model:** Claude
+- **What it produced:** When rendering the final Project.qmd I was faced with some issues, the rendering would stop when it came to the index document. Claude helped my understand the error message and fix the issue (typos  caused the code not to run through)
+- **What we had to correct or verify:** The code
+

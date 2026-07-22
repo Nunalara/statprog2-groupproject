@@ -1,5 +1,7 @@
 #### Explorative Data Analysis #################################################
 
+## Question 1: How has maternity leave changed over the years?
+
 ## First Analysis: Maternity rules in general ----------------------------------
 ## Change in average maternity length
 plot_avg_mat <- data_expl |>
@@ -56,8 +58,10 @@ plot_mat_length <- ggplot(data_expl, aes(x = mat_ld_total)) +
 
 plot_mat_length
 ggsave("Project_files/plots/maternity_length.png", plot = plot_mat_length,  create.dir = TRUE)
+## we didn't use this, as we relaized the count is being calculated for multiple years so it wouldn't make any sense 
 
 ## Maternity leave for women 1970 vs 2024 --------------------------------------
+# Idea: see if there has been any drastic policy changes for each country. so we looked at what the situation was like in the beginning (1970) and in the end (2024)
 
 mat_leave_comparison <- data_expl |>
   filter(year %in% c(1970, 2024))

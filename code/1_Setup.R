@@ -72,3 +72,6 @@ mat_type <- c(
   "Mandatory" = "darkred"
 )
 
+
+message("Environment setup was succesfull! All packages installed, data available.")
+
